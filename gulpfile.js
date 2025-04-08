@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
-// Оновлене завдання для клонування файлів
+// Завдання для копіювання файлів з app в public
 exports.cloneFiles = () => {
-  return gulp.src(['index.html', 'main.css', 'img/**/*']) // вибираємо файли для копіювання
+  return gulp.src('app/**/*') // всі файли з папки app
     .pipe(gulp.dest('public')); // копіюємо в папку public
 }
