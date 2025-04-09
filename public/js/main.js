@@ -1,0 +1,1 @@
+function add(n,t){return n+t}function subtract(n,t){return n-t}
