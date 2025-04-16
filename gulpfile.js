@@ -1,35 +1,44 @@
 const gulp = require('gulp');
-const cleanCSS = require('gulp-clean-css'); // Підключаємо clean-css
-const uglify = require('gulp-uglify');      // Підключаємо uglify
+const cleanCSS = require('gulp-clean-css'); // Мініфікація CSS
+const uglify = require('gulp-uglify');      // Мініфікація JS
 
 // Завдання: копіювання всіх файлів з папки app
-exports.cloneAll = async () => {
+exports.cloneAll = () => {
   return gulp.src('app/**/*')
     .pipe(gulp.dest('public'));
-}
+};
 
 // Завдання: копіювання тільки CSS файлів
-exports.cloneCSS = async () => {
+exports.cloneCSS = () => {
   return gulp.src('app/**/*.css')
     .pipe(gulp.dest('public'));
-}
+};
 
 // Завдання: копіювання тільки JS файлів
-exports.cloneJS = async () => {
+exports.cloneJS = () => {
   return gulp.src('app/**/*.js')
     .pipe(gulp.dest('public'));
-}
+};
+
+// Завдання: копіювання HTML файлів
+exports.cloneHtml = () => {
+  return gulp.src('app/**/*.html')
+    .pipe(gulp.dest('public'));
+};
 
 // Завдання: мініфікація CSS файлів
-exports.minifyCSS = async () => {
+exports.minifyCSS = () => {
   return gulp.src('app/**/*.css')
-    .pipe(cleanCSS()) // Мінімізація CSS
+    .pipe(cleanCSS())
     .pipe(gulp.dest('public'));
-}
+};
 
 // Завдання: мініфікація JS файлів
-exports.minifyJS = async () => {
+exports.minifyJS = () => {
   return gulp.src('app/**/*.js')
-    .pipe(uglify()) // Мінімізація JS
+    .pipe(uglify())
     .pipe(gulp.dest('public'));
-}
+};
+
+// Об'єднана задача: копіювання HTML та JS
+exports.cloneFiles = gulp.parallel(exports.cloneHtml, exports.cloneJS);

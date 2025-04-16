@@ -1,1 +1,7 @@
-function add(n,t){return n+t}function subtract(n,t){return n-t}
+function add(first, second){
+    return first + second;
+   }
+
+function subtract(first, second){
+ return first - second;
+}
