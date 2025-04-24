@@ -42,3 +42,4 @@ exports.minifyJS = () => {
 
 // Об'єднана задача: копіювання HTML та JS
 exports.cloneFiles = gulp.parallel(exports.cloneHtml, exports.cloneJS);
+exports.default = exports.cloneAll;
