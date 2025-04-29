@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Обмеження символів</title>
+
+    <!-- Підключення jQuery через CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+
+        #rchars {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <label>Максимум 25 символів:</label><br>
+    <textarea id="textarea"></textarea>
+    <span id="rchars">25</span> символів залишилося.
+</form>
+
+<script>
+    var maxLength = 25;
+    $('#textarea').on('keyup', function() {
+        var textlen = maxLength - $(this).val().length;
+        $('#rchars').text(textlen);
+
+        if ($(this).val().length >= maxLength) {
+            $(this).val($(this).val().substring(0, maxLength));
+        }
+    });
+</script>
+
+</body>
+</html>
