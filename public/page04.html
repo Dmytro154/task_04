@@ -5,14 +5,47 @@
     <title>Обробник кліку</title>
     <!-- Підключення jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Стилі -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            color: #333;
+            padding: 50px;
+            text-align: center;
+        }
+
+        p {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 24px;
+            padding: 15px 25px;
+            background-color: #b2ebf2;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        p:hover {
+            background-color: #4dd0e1;
+            color: white;
+        }
+
+        .clicked-message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #00796b;
+        }
+    </style>
 </head>
 <body>
 
-    <p>Натисніть на мене</p>
+    <p id="clickable">Натисніть на мене</p>
 
     <script>
-        $("p").bind("click", function() {
-            $("<p>На надпис було натиснуто</p>").appendTo("body");
+        $("#clickable").bind("click", function() {
+            $("<p class='clicked-message'>На надпис було натиснуто</p>").appendTo("body");
         });
     </script>
 
