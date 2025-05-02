@@ -1,0 +1,16 @@
+p {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 153, 102, 1) 0%,
+      rgba(255, 94, 98, 1) 50%,
+      rgba(255, 204, 112, 1) 100%
+    );
+    background-blend-mode: multiply;
+    color: white;
+    font-size: 28px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  

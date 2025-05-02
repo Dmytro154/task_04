@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 07 - Мерехтливий текст</title>
+
+  <!-- Підключення jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <p class="blink">Мерехтливий текст</p>
+
+  <script>
+    // Функція мерехтіння тексту
+    function blink_text() {
+      $('.blink').fadeOut(500);
+      $('.blink').fadeIn(500);
+    }
+
+    // Запуск мерехтіння кожну секунду
+    setInterval(blink_text, 1000);
+
+    // Після завантаження сторінки — додати стилі
+    $(document).ready(function () {
+      $("p.blink").append("<link href='/css/stylep2.css' rel='stylesheet' />");
+    });
+  </script>
+</body>
+</html>
