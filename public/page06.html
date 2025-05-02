@@ -10,15 +10,18 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <p class="blink">Мерехтливий текст</p>
+  <div class="blink-container">
+    <p class="blink">Мерехтливий текст</p>
+    <img class="blink" src="blink-image.png" alt="Мерехтливе зображення" width="200">
+  </div>
 
   <script>
     // Мерехтлива анімація
     function blink_text() {
-      $('.blink').fadeOut(500).fadeIn(500);
+      $('.blink').fadeOut(400).fadeIn(400);
     }
 
-    setInterval(blink_text, 1000);
+    setInterval(blink_text, 1300); // трохи більший інтервал
   </script>
 </body>
 </html>
