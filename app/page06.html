@@ -1,24 +1,21 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <title>Page 07 - Мерехтливий текст</title>
-
-  <!-- ПРАВИЛЬНЕ підключення стилю -->
-  <link rel="stylesheet" href="stylep2.css">
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-  <p class="blink">Мерехтливий текст</p>
-
-  <script>
-    // Мерехтлива анімація
+<script>
     function blink_text() {
-      $('.blink').fadeOut(500).fadeIn(500);
+      $('.blink').fadeOut(400, function () {
+        setTimeout(() => {
+          $('.blink').fadeIn(400, function () {
+            // Затримка перед наступним мерехтінням
+            setTimeout(blink_text, 1200); // 1200мс між циклами
+          });
+        }, 300); // коротка пауза між згасанням і появою
+      });
     }
-
-    setInterval(blink_text, 1000);
+  
+    $(document).ready(function () {
+      // Підключення стилів (якщо потрібно динамічно)
+      $('head').append("<link href='/css/stylep2.css' rel='stylesheet' />");
+  
+      // Запуск першого мерехтіння
+      blink_text();
+    });
   </script>
-</body>
-</html>
+  
