@@ -2,13 +2,19 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Page 05</title>
+  <title>Page 06</title>
+
+  <!-- Стандартне підключення CSS -->
+  <link rel="stylesheet" href="style1.css">
+
+  <!-- Підключення jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <p>Підключення стилів</p>
 
   <script>
+    // Додавання стилів до <p> після повного завантаження сторінки
     $(document).ready(function() {
       $("p").append("<link href='/css/stylep1.css' rel='stylesheet' />");
     });
